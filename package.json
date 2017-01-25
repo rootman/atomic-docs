@@ -1,0 +1,22 @@
+{
+  "name": "atomic-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rootman/atomic-docs.git",
+  "author": "Tim Rottmann <tim.rottmann@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "php -S 0.0.0.0:8000",
+    "open": "open http://localhost:8000/atomic-core",
+    "build:css": "node-sass scss/main.scss | postcss -u autoprefixer -c postcss.json > css/main.css",
+    "watch:css": "onchange \"scss/**/*.scss\" -- npm run build:css",
+    "dev": "npm-run-all -p serve open watch:css"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.7.0",
+    "node-sass": "^4.3.0",
+    "npm-run-all": "^4.0.1",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^2.6.0"
+  }
+}
